@@ -3,9 +3,14 @@
   margin-top: -5.5625rem;
   position: relative;
 
+  @include mq-up(medium) {
+    margin-top: -8.625rem;
+  }
+
   source,
   img {
     display: block;
+    width: 100%;
     max-width: 100%;
   }
 

@@ -40,6 +40,11 @@
         align-items: flex-start;
         padding-bottom: 1.875rem;
 
+        @include mq-up(medium) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
         p {
           margin-bottom: 1.875rem;
         }

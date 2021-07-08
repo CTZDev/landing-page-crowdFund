@@ -24,10 +24,6 @@ body {
   @include mq-up(small) {
     font-size: var(--font-md);
   }
-
-  @include mq-up(medium) {
-    font-size: var(--font-lg);
-  }
 }
 
 li {
@@ -88,11 +84,19 @@ p {
   }
 }
 
-//Max-width of the Content in Mobile (margin)
+//Max-width of the content
+main {
+  max-width: 51.625rem;
+  margin: 0 auto;
+}
 
 //Utilities
 .u-wrapper {
   padding: 0 1.5em;
+
+  @include mq-up(medium) {
+    padding: 0 3rem;
+  }
 }
 
 .u-copy {

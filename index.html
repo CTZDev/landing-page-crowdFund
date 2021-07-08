@@ -29,13 +29,13 @@
         </ul>
       </nav>
     </header>
+    <div class="hero">
+      <picture>
+        <source media="(min-width: 640px)" srcset="./images/image-hero-desktop.jpg" />
+        <img src="./images/image-hero-mobile.jpg" alt="Hero" />
+      </picture>
+    </div>
     <main>
-      <section class="hero">
-        <picture>
-          <source media="(min-width: 640px)" srcset="./images/image-hero-desktop.jpg" />
-          <img src="./images/image-hero-mobile.jpg" alt="Hero" />
-        </picture>
-      </section>
       <section class="featured">
         <div class="u-wrapper">
           <div class="featured-content u-wrapper">
@@ -44,16 +44,17 @@
             <p class="u-copy">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
             <div class="featured-buttons flex flex-jc-sb flex-ai-c">
               <button type="button" class="btn btn-primary">Back this project</button>
-              <a href="#" class="btn-bookmark">
+              <a href="#" class="btn-bookmark flex flex-ai-c">
                 <img src="./images/icon-bookmark.svg" alt="Bookmark" />
+                BookMark
               </a>
             </div>
           </div>
         </div>
       </section>
       <section class="databack">
-        <div class="u-wrapper">
-          <div class="databack-content u-wrapper">
+        <div class="databack-statistics flex flex-fd-c flex-jc-c">
+          <div class="databack-content u-wrapper flex flex-fd-c flex">
             <div class="databack-content-backed">
               <span class="u-numbers">&dollar;89,914</span>
               <small class="u-copy">of &dollar;100,000 backed</small>
@@ -65,9 +66,9 @@
             <div class="databack-content-daysleft">
               <span class="u-numbers">56</span>
               <small class="u-copy">days left</small>
-              <div class="bar-days"></div>
             </div>
           </div>
+          <div class="u-wrapper bar-days"></div>
         </div>
       </section>
       <section class="about">

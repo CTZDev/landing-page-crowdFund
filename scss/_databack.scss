@@ -1,12 +1,23 @@
 .databack {
   text-align: center;
 
-  &-content {
+  &-statistics {
+    margin: 0 3rem;
     @include box;
+  }
+
+  &-content {
+    @include mq-up(medium) {
+      flex-direction: row;
+    }
 
     span {
       display: block;
       margin-bottom: 0.375rem;
+
+      @include mq-up(medium) {
+        margin-bottom: 0;
+      }
     }
 
     small {
@@ -15,50 +26,67 @@
 
     > * {
       padding: 2.25rem 0 1.5rem 0;
+
+      @include mq-up(medium) {
+        flex: 1 1 33.33%;
+        align-self: flex-start;
+        text-align: left;
+        padding: 3rem 0 2rem 0;
+      }
     }
 
-    &-backed,
-    &-backers {
+    &-backers,
+    &-daysleft {
       position: relative;
+
+      @include mq-up(medium) {
+        padding-left: 3rem;
+      }
 
       &::after {
         content: "";
         position: absolute;
-        top: 100%;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
         height: 1px;
         width: 80px;
         background-color: rgba(0, 0, 0, 0.4);
-      }
-    }
 
-    &-daysleft {
-      padding-bottom: 2.4375rem;
-
-      small {
-        display: block;
-        margin-bottom: 2rem;
-      }
-
-      .bar-days {
-        border-radius: 100vw;
-        height: 0.75rem;
-        width: 100%;
-        background-color: rgb(244, 244, 244);
-        position: relative;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
+        @include mq-up(medium) {
+          //arreglar
+          top: 50%;
+          width: 1px;
+          height: 80px;
           left: 0;
-          width: 80%;
-          height: inherit;
-          border-radius: inherit;
-          background-color: var(--clr-cyan);
+          transform: translateY(-50%);
         }
       }
     }
+  }
+}
+
+.bar-days {
+  border-radius: 100vw;
+  height: 0.75rem;
+  width: calc(100% - 3rem);
+  background-color: rgb(244, 244, 244);
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+
+  @include mq-up(medium) {
+    width: calc(100% - 6rem);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: inherit;
+    border-radius: inherit;
+    background-color: var(--clr-cyan);
   }
 }

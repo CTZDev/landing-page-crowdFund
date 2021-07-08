@@ -27,9 +27,24 @@
 
   &-buttons {
     padding-bottom: 2.4375rem;
+
     a {
       font-size: 0;
       border-radius: 50%;
+
+      @include mq-up(small) {
+        font-size: 1.1rem;
+        border-radius: 100vw;
+        text-decoration: none;
+        color: var(--clr-gray);
+        padding-right: 1.5rem;
+        font-weight: bold;
+        background-color: rgb(244, 244, 244);
+
+        img {
+          margin-right: 1.5rem;
+        }
+      }
 
       img {
         border-radius: inherit;

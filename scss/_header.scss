@@ -2,11 +2,17 @@
   background-color: transparent;
   position: relative;
   z-index: 1;
+  max-width: 69rem;
+  margin: 0 auto;
 }
 
 .navigation {
   padding: 2rem;
   width: min(72rem, 100%); // 1152px (1200px-24px)
+
+  @include mq-up(medium) {
+    padding: 3rem;
+  }
 
   .logo img {
     display: block;
@@ -30,6 +36,15 @@
       visibility: visible;
     }
 
+    @include mq-up(medium) {
+      position: initial;
+      opacity: 1;
+      visibility: visible;
+      flex-direction: row;
+      background-color: transparent;
+      box-shadow: initial;
+    }
+
     &-link {
       color: var(--clr-gray);
       text-decoration: none;
@@ -45,7 +60,16 @@
       }
 
       @include mq-up(medium) {
+        padding: 0;
+        font-size: 1em;
+        font-weight: normal;
+        overflow: initial;
+        width: fit-content;
+        background-color: transparent;
+        color: var(--clr-white);
+
         &:not(:last-child) {
+          border-bottom: none;
           margin-right: 2em;
         }
       }

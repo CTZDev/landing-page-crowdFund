@@ -1,0 +1,63 @@
+.databack {
+  text-align: center;
+
+  &-content {
+    @include box;
+
+    h3 {
+      margin-bottom: 0.375rem;
+    }
+
+    small {
+      font-size: var(--font-sm);
+    }
+
+    > * {
+      padding: 2.25rem 0 1.5rem 0;
+    }
+
+    &-backed,
+    &-backers {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 80px;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &-daysleft {
+      padding-bottom: 2.4375rem;
+
+      small {
+        display: block;
+        margin-bottom: 2rem;
+      }
+
+      .bar-days {
+        border-radius: 100vw;
+        height: 0.75rem;
+        width: 100%;
+        background-color: rgb(244, 244, 244);
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          height: inherit;
+          border-radius: inherit;
+          background-color: var(--clr-cyan);
+        }
+      }
+    }
+  }
+}

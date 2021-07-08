@@ -27,3 +27,11 @@ $breakpoints-down: (
     @content;
   }
 }
+
+//Container Box
+@mixin box {
+  background-color: var(--clr-white);
+  border-radius: 8px;
+  box-shadow: 0 -1px 8px -6px black;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,35 @@
+.featured {
+  text-align: center;
+  margin-top: -3.5rem;
+
+  &-content {
+    position: relative;
+    z-index: 1;
+    @include box;
+
+    > img {
+      margin-top: -1.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  &-buttons {
+    padding-bottom: 2.4375rem;
+    a {
+      font-size: 0;
+      border-radius: 50%;
+
+      img {
+        border-radius: inherit;
+      }
+    }
+  }
+}

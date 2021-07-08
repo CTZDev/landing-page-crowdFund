@@ -14,15 +14,40 @@
   }
 
   .menu {
+    position: absolute;
+    top: 100%;
+    left: 2rem;
+    right: 2rem;
+    @include box;
+    overflow: hidden;
     margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease, visibility 300ms ease;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
 
     &-link {
-      display: block;
       color: var(--clr-gray);
       text-decoration: none;
+      width: 100%;
+      padding: 1.75rem 1.5rem;
+      color: var(--clr-black);
+      background-color: var(--clr-white);
+      font-size: 1.2em;
+      font-weight: bold;
 
       &:not(:last-child) {
-        margin-right: 2em;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      @include mq-up(medium) {
+        &:not(:last-child) {
+          margin-right: 2em;
+        }
       }
     }
   }
@@ -57,15 +82,32 @@
   }
 
   &.is-active::before {
-    transform: rotate(45deg) translate(9px, 7px);
+    transform: rotate(45deg) translate(6px, 7px);
   }
 
   &.is-active::after {
-    transform: rotate(-45deg) translate(7px, -5px);
+    transform: rotate(-45deg) translate(2px, -4px);
   }
 
   &.is-active > .bar {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 5.5625rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, transparent 4%, rgba(0, 0, 0, 0.5) 30%, transparent 70%, transparent 100%);
+  transition: opacity 300ms ease, visibility 300ms ease;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
   }
 }

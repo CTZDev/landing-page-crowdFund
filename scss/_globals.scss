@@ -17,6 +17,10 @@ body {
   font-weight: normal;
   font-size: var(--font-sm);
 
+  &.no-scroll {
+    overflow: hidden;
+  }
+
   @include mq-up(small) {
     font-size: var(--font-md);
   }
@@ -99,7 +103,7 @@ p {
 //Buttons
 .btn {
   padding: 1.1875rem 0;
-  width: 14rem;
+  min-width: 14rem;
   display: inline-block;
   border-radius: 100vw;
   border: none;

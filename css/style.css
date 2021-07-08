@@ -28,6 +28,9 @@ body {
   font-weight: normal;
   font-size: var(--font-sm);
 }
+body.no-scroll {
+  overflow: hidden;
+}
 @media only screen and (min-width: 40em) {
   body {
     font-size: var(--font-md);
@@ -100,7 +103,7 @@ p {
 
 .btn {
   padding: 1.1875rem 0;
-  width: 14rem;
+  min-width: 14rem;
   display: inline-block;
   border-radius: 100vw;
   border: none;
@@ -134,15 +137,41 @@ p {
   max-width: 100%;
 }
 .navigation .menu {
+  position: absolute;
+  top: 100%;
+  left: 2rem;
+  right: 2rem;
+  background-color: var(--clr-white);
+  border-radius: 8px;
+  box-shadow: 0 -1px 8px -6px black;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
   margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+.navigation .menu.is-active {
+  opacity: 1;
+  visibility: visible;
 }
 .navigation .menu-link {
-  display: block;
   color: var(--clr-gray);
   text-decoration: none;
+  width: 100%;
+  padding: 1.75rem 1.5rem;
+  color: var(--clr-black);
+  background-color: var(--clr-white);
+  font-size: 1.2em;
+  font-weight: bold;
 }
 .navigation .menu-link:not(:last-child) {
-  margin-right: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+@media only screen and (min-width: 64em) {
+  .navigation .menu-link:not(:last-child) {
+    margin-right: 2em;
+  }
 }
 
 .menu-hamburguer {
@@ -168,14 +197,30 @@ p {
   margin: 0 auto;
 }
 .menu-hamburguer.is-active::before {
-  transform: rotate(45deg) translate(9px, 7px);
+  transform: rotate(45deg) translate(6px, 7px);
 }
 .menu-hamburguer.is-active::after {
-  transform: rotate(-45deg) translate(7px, -5px);
+  transform: rotate(-45deg) translate(2px, -4px);
 }
 .menu-hamburguer.is-active > .bar {
   opacity: 0;
   visibility: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 5.5625rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(to bottom, transparent 4%, rgba(0, 0, 0, 0.5) 30%, transparent 70%, transparent 100%);
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+.overlay.is-active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .hero {
@@ -204,7 +249,6 @@ p {
 }
 .featured-content {
   position: relative;
-  z-index: 1;
   background-color: var(--clr-white);
   border-radius: 8px;
   box-shadow: 0 -1px 8px -6px black;
@@ -339,7 +383,7 @@ p {
   vertical-align: middle;
 }
 .about-content-stand-details .btn {
-  width: 10rem;
+  min-width: 10rem;
 }
 .about-content-basic, .about-content-black, .about-content-especial {
   background-color: var(--clr-white);
@@ -357,7 +401,7 @@ p {
 }
 .about-content-especial .btn {
   background-color: var(--clr-gray);
-  cursor: none;
+  cursor: initial;
 }
 
 /*# sourceMappingURL=style.css.map */

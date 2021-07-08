@@ -1,0 +1,29 @@
+//640px , 1024px , 1400px
+$breakpoints-up: (
+  small: 40em,
+  medium: 64em,
+  large: 87.5em,
+);
+
+//639px , 1023px , 1399px
+$breakpoints-down: (
+  small: 39.375em,
+  medium: 63.9375em,
+  large: 87.4375em,
+);
+
+//Applying min-width - cuando empezamos en movil y el responsive lo hacemos de pequeño a grande (mobile a desktop)
+@mixin mq-up($key) {
+  $size: map-get($breakpoints-up, $key);
+  @media only screen and (min-width:#{$size}) {
+    @content;
+  }
+}
+
+//Applying max-width -Cuando empezamos en desktop y el responsive lo hacemos de grande a pequeño (desktop a mobile)
+@mixin mq-down($key) {
+  $size: map-get($breakpoints-down, $key);
+  @media only screen and (max-width:#{$size}) {
+    @content;
+  }
+}

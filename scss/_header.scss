@@ -1,0 +1,71 @@
+.main-header {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.navigation {
+  padding: 2em;
+  width: min(72rem, 100%); // 1152px (1200px-24px)
+
+  .logo img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .menu {
+    margin: 0;
+
+    &-link {
+      display: block;
+      color: var(--clr-gray);
+      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-right: 2em;
+      }
+    }
+  }
+}
+
+.menu-hamburguer {
+  width: 2.5em;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.4s ease-in;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 90%;
+  }
+
+  .bar,
+  &::before,
+  &::after {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+    margin: 4px 0;
+    background-color: var(--clr-white);
+    transition: all 0.15s ease-out;
+  }
+
+  .bar {
+    margin: 0 auto;
+  }
+
+  &.is-active::before {
+    transform: rotate(45deg) translate(9px, 7px);
+  }
+
+  &.is-active::after {
+    transform: rotate(-45deg) translate(7px, -5px);
+  }
+
+  &.is-active > .bar {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

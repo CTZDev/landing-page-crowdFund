@@ -1,0 +1,58 @@
+html {
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  font-family: "Commissioner", sans-serif;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+//Flex
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+//Visibility
+.hide-for-mobile {
+  //max-width
+  @include mq-down(medium) {
+    display: none;
+  }
+}
+
+// min-width
+.hide-for-desktop {
+  @include mq-up(medium) {
+    display: none;
+  }
+}

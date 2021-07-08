@@ -63,6 +63,10 @@ p {
   &-ai-c {
     align-items: center;
   }
+
+  &-fd-c {
+    flex-direction: column;
+  }
 }
 
 //Visibility
@@ -87,19 +91,15 @@ p {
   padding: 0 1.5em;
 }
 
-.u-title {
-  font-size: 1.4em;
-  line-height: 1.1;
-}
-
 .u-copy {
-  line-height: 1.6;
+  line-height: 1.8;
   color: var(--clr-gray);
 }
 
 //Buttons
 .btn {
-  padding: 1.1875rem 2.625rem;
+  padding: 1.1875rem 0;
+  width: 14rem;
   display: inline-block;
   border-radius: 100vw;
   border: none;
@@ -116,4 +116,5 @@ p {
 //Size of numbers
 .u-numbers {
   font-size: 2.5em;
+  font-weight: bold;
 }

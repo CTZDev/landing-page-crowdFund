@@ -4,7 +4,8 @@
   &-content {
     @include box;
 
-    h3 {
+    span {
+      display: block;
       margin-bottom: 0.375rem;
     }
 

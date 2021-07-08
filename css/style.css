@@ -446,6 +446,13 @@ main {
 .about-content-stand-title {
   padding: 1.625rem 0;
 }
+@media only screen and (min-width: 64em) {
+  .about-content-stand-title {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 .about-content-stand-title h4 {
   font-size: 1.2em;
   margin-bottom: 0.3em;
@@ -462,10 +469,16 @@ main {
   .about-content-stand-details {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 }
 .about-content-stand-details p {
   margin-bottom: 1.875rem;
+}
+@media only screen and (min-width: 64em) {
+  .about-content-stand-details p {
+    margin-bottom: 0;
+  }
 }
 .about-content-stand-details p > span {
   font-size: 0.5em;

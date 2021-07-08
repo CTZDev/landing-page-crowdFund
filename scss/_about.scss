@@ -25,6 +25,12 @@
       &-title {
         padding: 1.625rem 0;
 
+        @include mq-up(medium) {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
         h4 {
           font-size: 1.2em;
           margin-bottom: 0.3em;
@@ -43,10 +49,15 @@
         @include mq-up(medium) {
           flex-direction: row;
           justify-content: space-between;
+          align-items: center;
         }
 
         p {
           margin-bottom: 1.875rem;
+
+          @include mq-up(medium) {
+            margin-bottom: 0;
+          }
         }
 
         p > span {

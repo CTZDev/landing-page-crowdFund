@@ -218,6 +218,9 @@ main {
     background-color: transparent;
     color: var(--clr-white);
   }
+  .navigation .menu-link:hover {
+    text-decoration: underline;
+  }
   .navigation .menu-link:not(:last-child) {
     border-bottom: none;
     margin-right: 2em;
@@ -328,26 +331,37 @@ main {
 .featured-buttons {
   padding-bottom: 2.4375rem;
 }
-.featured-buttons a {
-  font-size: 0;
+.featured-buttons .btn-bookmark {
   border-radius: 50%;
+  text-decoration: none;
+  color: var(--clr-gray);
+}
+.featured-buttons .btn-bookmark span {
+  display: none;
 }
 @media only screen and (min-width: 40em) {
-  .featured-buttons a {
+  .featured-buttons .btn-bookmark span {
+    display: block;
+  }
+}
+.featured-buttons .btn-bookmark.is-active {
+  font-size: 1.1rem;
+  color: var(--clr-darkcyan);
+}
+.featured-buttons .btn-bookmark.is-active circle {
+  fill: var(--clr-darkcyan);
+}
+@media only screen and (min-width: 40em) {
+  .featured-buttons .btn-bookmark {
     font-size: 1.1rem;
     border-radius: 100vw;
-    text-decoration: none;
-    color: var(--clr-gray);
     padding-right: 1.5rem;
     font-weight: bold;
     background-color: #f4f4f4;
   }
-  .featured-buttons a img {
+  .featured-buttons .btn-bookmark svg {
     margin-right: 1.5rem;
   }
-}
-.featured-buttons a img {
-  border-radius: inherit;
 }
 
 .databack {

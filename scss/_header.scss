@@ -68,6 +68,10 @@
         background-color: transparent;
         color: var(--clr-white);
 
+        &:hover {
+          text-decoration: underline;
+        }
+
         &:not(:last-child) {
           border-bottom: none;
           margin-right: 2em;

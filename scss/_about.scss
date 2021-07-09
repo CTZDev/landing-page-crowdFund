@@ -5,7 +5,6 @@
     @include box;
 
     h3 {
-      font-size: 1.4em;
       margin-bottom: 2rem;
     }
 
@@ -30,16 +29,6 @@
           justify-content: space-between;
           align-items: center;
         }
-
-        h4 {
-          font-size: 1.2em;
-          margin-bottom: 0.3em;
-        }
-
-        h5 {
-          font-size: 1.15em;
-          color: var(--clr-cyan);
-        }
       }
 
       &-details {
@@ -58,14 +47,6 @@
           @include mq-up(medium) {
             margin-bottom: 0;
           }
-        }
-
-        p > span {
-          font-size: 0.5em;
-          color: var(--clr-gray);
-          font-weight: normal;
-          margin-left: 0.3em;
-          vertical-align: middle;
         }
 
         .btn {

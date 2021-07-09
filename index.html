@@ -43,7 +43,7 @@
             <h1>Mastercraft Bamboo Monitor Riser</h1>
             <p class="u-copy">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
             <div class="featured-buttons flex flex-jc-sb flex-ai-c">
-              <button type="button" class="btn btn-primary">Back this project</button>
+              <button type="button" id="btndataback" class="btn btn-primary">Back this project</button>
               <a href="#" class="btn-bookmark flex flex-ai-c">
                 <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
                   <g fill="none" fill-rule="evenodd">
@@ -79,7 +79,7 @@
       <section class="about">
         <div class="u-wrapper">
           <div class="about-content u-wrapper">
-            <h3>About this project</h3>
+            <h3 class="u-title">About this project</h3>
             <div class="about-content-paragraph">
               <p class="u-copy">
                 The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height.
@@ -94,43 +94,43 @@
             <div class="about-content-stand">
               <article class="about-content-basic u-wrapper">
                 <div class="about-content-stand-title flex flex-fd-c">
-                  <h4>Bamboo Stand</h4>
-                  <h5>Pledge &dollar;25 or more</h5>
+                  <h4 class="u-subtitle">Bamboo Stand</h4>
+                  <h5 class="u-subtitle-sm">Pledge &dollar;25 or more</h5>
                 </div>
                 <p class="u-copy">
                   You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a
                   special Backer member list.
                 </p>
                 <div class="about-content-stand-details flex flex-fd-c">
-                  <p class="u-numbers">101<span>left</span></p>
+                  <p class="u-numbers">101<span class="u-numbers-span">left</span></p>
                   <button type="button" class="btn btn-primary">Select Reward</button>
                 </div>
               </article>
               <article class="about-content-black u-wrapper">
                 <div class="about-content-stand-title">
-                  <h4>Black Edition Stand</h4>
-                  <h5>Pledge &dollar;75 or more</h5>
+                  <h4 class="u-subtitle">Black Edition Stand</h4>
+                  <h5 class="u-subtitle-sm">Pledge &dollar;75 or more</h5>
                 </div>
                 <p class="u-copy">
                   You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is
                   included.
                 </p>
                 <div class="about-content-stand-details flex flex-fd-c">
-                  <p class="u-numbers">64<span>left</span></p>
+                  <p class="u-numbers">64<span class="u-numbers-span">left</span></p>
                   <button type="button" class="btn btn-primary">Select Reward</button>
                 </div>
               </article>
               <article class="about-content-especial u-wrapper">
                 <div class="about-content-stand-title">
-                  <h4>Mahogany Special Edition</h4>
-                  <h5>Pledge &dollar;200 or more</h5>
+                  <h4 class="u-subtitle">Mahogany Special Edition</h4>
+                  <h5 class="u-subtitle-sm">Pledge &dollar;200 or more</h5>
                 </div>
                 <p class="u-copy">
                   You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list.
                   Shipping is included.
                 </p>
                 <div class="about-content-stand-details flex flex-fd-c">
-                  <p class="u-numbers">0<span>left</span></p>
+                  <p class="u-numbers">0<span class="u-numbers-span">left</span></p>
                   <button type="button" class="btn btn-primary">Out of Stock</button>
                 </div>
               </article>
@@ -139,7 +139,133 @@
         </div>
       </section>
     </main>
+    <!-- Modal Selection-->
+    <div class="modal u-wrapper" id="modalSelection">
+      <div class="modal-content u-wrapper">
+        <div class="modal-header flex flex-jc-sb flex-ai-c">
+          <h5 class="u-title">Back this project</h5>
+          <button type="button">
+            <img src="./images/icon-close-modal.svg" alt="Close Modal" />
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="u-copy">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+          <div class="modal-body-content">
+            <!-- Selected pledge start -->
+            <div class="modal-body-article u-wrapper">
+              <div class="modal-body-header flex flex-ai-c">
+                <input type="radio" name="radPledge" />
+                <h5 class="u-subtitle m-0">Pledge with no reward</h5>
+              </div>
+              <p class="u-copy">
+                Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product
+                updates via email.
+              </p>
+            </div>
+            <!-- ./ Selected pledge end -->
 
+            <!-- Selected pledge start -->
+            <div class="modal-body-article u-wrapper">
+              <div class="modal-body-header flex flex-ai-c">
+                <input type="radio" name="radPledge" />
+                <div class="modal-body-stand">
+                  <h5 class="u-subtitle">Bamboo Stand</h5>
+                  <h6 class="u-subtitle-sm">Pledge &dollar;25 or more</h6>
+                </div>
+              </div>
+              <p class="u-copy">
+                You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special
+                Backer member list.
+              </p>
+              <div class="modal-body-footer">
+                <p class="u-numbers-sm">101<span class="u-numbers-span">left</span></p>
+              </div>
+              <div class="modal-body-transact flex flex-fd-c flex-ai-c u-wrapper">
+                <h6 class="u-subtitle">Enter your pledge</h6>
+                <div class="modal-body-transact-buttons">
+                  <button type="button" class="btn btn-modal btn-secondary"><span>&dollar;</span>25</button>
+                  <button type="button" class="btn btn-modal btn-primary">Continue</button>
+                </div>
+              </div>
+            </div>
+            <!-- ./ Selected pledge end -->
+
+            <!-- Selected pledge start -->
+            <div class="modal-body-article u-wrapper">
+              <div class="modal-body-header flex flex-ai-c">
+                <input type="radio" name="radPledge" />
+                <div class="modal-body-stand">
+                  <h5 class="u-subtitle">Black Edition Stand</h5>
+                  <h6 class="u-subtitle-sm">Pledge &dollar;75 or more</h6>
+                </div>
+              </div>
+              <p class="u-copy">
+                You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is
+                included.
+              </p>
+              <div class="modal-body-footer">
+                <p class="u-numbers-sm">64<span class="u-numbers-span">left</span></p>
+              </div>
+              <div class="modal-body-transact flex flex-fd-c flex-ai-c u-wrapper">
+                <h6 class="u-subtitle">Enter your pledge</h6>
+                <div class="modal-body-transact-buttons">
+                  <button type="button" class="btn btn-modal btn-secondary"><span>&dollar;</span>75</button>
+                  <button type="button" class="btn btn-modal btn-primary">Continue</button>
+                </div>
+              </div>
+            </div>
+            <!-- ./ Selected pledge end -->
+
+            <!-- Selected pledge  start -->
+            <div class="modal-body-article u-wrapper">
+              <div class="modal-body-header flex flex-ai-c">
+                <input type="radio" name="radPledge" />
+                <div class="modal-body-stand">
+                  <h5 class="u-subtitle">Mahogany Special Edition</h5>
+                  <h6 class="u-subtitle-sm">Pledge &dollar;200 or more</h6>
+                </div>
+              </div>
+              <p class="u-copy">
+                You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list.
+                Shipping is included.
+              </p>
+              <div class="modal-body-footer">
+                <p class="u-numbers-sm">0<span class="u-numbers-span">left</span></p>
+              </div>
+              <div class="modal-body-transact flex flex-fd-c flex-ai-c u-wrapper">
+                <h6 class="u-subtitle">Enter your pledge</h6>
+                <div class="modal-body-transact-buttons">
+                  <button type="button" class="btn btn-modal btn-secondary"><span>&dollar;</span>200</button>
+                  <button type="button" class="btn btn-modal btn-primary">Continue</button>
+                </div>
+              </div>
+            </div>
+            <!-- ./ Selected pledge end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ./ Modal Selection-->
+
+    <!-- Modal Success -->
+    <div class="modal u-wrapper" id="modalSuccess">
+      <div class="modal-content modal-success">
+        <div class="modal-header">
+          <img src="./images/icon-check.svg" alt="Success" />
+          <h5 class="u-title">Thanks for your support</h5>
+        </div>
+        <div class="modal-body">
+          <p class="u-copy">
+            Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is
+            completed.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-modal btn-primary">Got it!</button>
+        </div>
+      </div>
+    </div>
+    <!-- ./ Modal Success -->
     <script src="./js/script.js" type="module"></script>
   </body>
 </html>

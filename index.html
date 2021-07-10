@@ -43,7 +43,7 @@
             <h1>Mastercraft Bamboo Monitor Riser</h1>
             <p class="u-copy">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
             <div class="featured-buttons flex flex-jc-sb flex-ai-c">
-              <button type="button" id="btndataback" class="btn btn-primary">Back this project</button>
+              <button type="button" id="btndataback" class="btn btn-primary" data-open="modalSelection">Back this project</button>
               <a href="#" class="btn-bookmark flex flex-ai-c">
                 <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
                   <g fill="none" fill-rule="evenodd">
@@ -103,7 +103,7 @@
                 </p>
                 <div class="about-content-stand-details flex flex-fd-c">
                   <p class="u-numbers">101<span class="u-numbers-span">left</span></p>
-                  <button type="button" class="btn btn-primary">Select Reward</button>
+                  <button type="button" class="btn btn-primary" data-open="modalSuccess">Select Reward</button>
                 </div>
               </article>
               <article class="about-content-black u-wrapper">
@@ -117,7 +117,7 @@
                 </p>
                 <div class="about-content-stand-details flex flex-fd-c">
                   <p class="u-numbers">64<span class="u-numbers-span">left</span></p>
-                  <button type="button" class="btn btn-primary">Select Reward</button>
+                  <button type="button" class="btn btn-primary" data-open="modalSuccess">Select Reward</button>
                 </div>
               </article>
               <article class="about-content-especial u-wrapper stock-out">
@@ -144,7 +144,7 @@
       <div class="modal-content u-wrapper">
         <div class="modal-header flex flex-jc-sb flex-ai-c">
           <h5 class="u-title">Back this project</h5>
-          <button type="button">
+          <button type="button" data-close>
             <img src="./images/icon-close-modal.svg" alt="Close Modal" />
           </button>
         </div>
@@ -156,7 +156,7 @@
               <div class="modal-body-header flex flex-ai-c">
                 <div class="modal-body-stand">
                   <label for="radPledge" class="radbutton-modal">
-                    <input type="radio" name="radModal" id="radPledge" />
+                    <input type="radio" name="radModal" id="radPledge" data-open="modalSuccess" />
                   </label>
                   <label for="radPledge">
                     <h5 class="u-subtitle m-0">Pledge with no reward</h5>
@@ -194,7 +194,7 @@
                 <h6 class="u-subtitle">Enter your pledge</h6>
                 <div class="modal-body-transact-buttons">
                   <button type="button" class="btn btn-modal btn-secondary"><span>&dollar;</span>25</button>
-                  <button type="button" class="btn btn-modal btn-primary">Continue</button>
+                  <button type="button" class="btn btn-modal btn-primary" data-open="modalSuccess">Continue</button>
                 </div>
               </div>
             </div>
@@ -224,7 +224,7 @@
                 <h6 class="u-subtitle">Enter your pledge</h6>
                 <div class="modal-body-transact-buttons">
                   <button type="button" class="btn btn-modal btn-secondary"><span>&dollar;</span>75</button>
-                  <button type="button" class="btn btn-modal btn-primary">Continue</button>
+                  <button type="button" class="btn btn-modal btn-primary" data-open="modalSuccess">Continue</button>
                 </div>
               </div>
             </div>
@@ -275,7 +275,7 @@
           </p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-modal btn-primary">Got it!</button>
+          <button type="button" class="btn btn-modal btn-primary" data-close>Got it!</button>
         </div>
       </div>
     </div>

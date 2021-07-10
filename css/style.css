@@ -176,7 +176,7 @@ main {
 }
 
 .btn-modal {
-  min-width: 7rem;
+  min-width: 6.8rem;
   font-size: 1em;
   padding: 1rem 0;
 }
@@ -441,6 +441,7 @@ main {
   border-radius: 50%;
   text-decoration: none;
   color: var(--clr-gray);
+  cursor: pointer;
 }
 .featured-buttons .btn-bookmark span {
   display: none;
@@ -633,6 +634,24 @@ main {
   opacity: 0.4;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: all 250ms ease-in;
+}
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
 .modal-content {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -642,6 +661,9 @@ main {
   box-shadow: 0 -1px 8px -6px black;
   margin-bottom: 1.5rem;
   max-width: 47.25rem;
+  position: relative;
+  overflow: auto;
+  max-height: 80vh;
 }
 .modal-header {
   margin-bottom: 1.5rem;
@@ -650,6 +672,7 @@ main {
   border: none;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .modal-header button img {
   display: block;

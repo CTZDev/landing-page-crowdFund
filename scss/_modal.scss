@@ -1,11 +1,32 @@
 //Modal
 .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(black, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: all 250ms ease-in;
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
   &-content {
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin: 0 auto;
     @include box;
     max-width: 47.25rem;
+    position: relative;
+    overflow: auto;
+    max-height: 80vh;
   }
 
   &-header {
@@ -15,6 +36,7 @@
       border: none;
       outline: none;
       background-color: transparent;
+      cursor: pointer;
 
       img {
         display: block;

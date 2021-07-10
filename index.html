@@ -120,7 +120,7 @@
                   <button type="button" class="btn btn-primary">Select Reward</button>
                 </div>
               </article>
-              <article class="about-content-especial u-wrapper">
+              <article class="about-content-especial u-wrapper stock-out">
                 <div class="about-content-stand-title">
                   <h4 class="u-subtitle">Mahogany Special Edition</h4>
                   <h5 class="u-subtitle-sm">Pledge &dollar;200 or more</h5>
@@ -131,7 +131,7 @@
                 </p>
                 <div class="about-content-stand-details flex flex-fd-c">
                   <p class="u-numbers">0<span class="u-numbers-span">left</span></p>
-                  <button type="button" class="btn btn-primary">Out of Stock</button>
+                  <button type="button" class="btn btn-primary stock-out-btn">Out of Stock</button>
                 </div>
               </article>
             </div>
@@ -152,10 +152,16 @@
           <p class="u-copy">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
           <div class="modal-body-content">
             <!-- Selected pledge start -->
-            <div class="modal-body-article u-wrapper">
+            <div class="modal-body-article u-wrapper" data-dialog>
               <div class="modal-body-header flex flex-ai-c">
-                <input type="radio" name="radPledge" />
-                <h5 class="u-subtitle m-0">Pledge with no reward</h5>
+                <div class="modal-body-stand">
+                  <label for="radPledge" class="radbutton-modal">
+                    <input type="radio" name="radModal" id="radPledge" />
+                  </label>
+                  <label for="radPledge">
+                    <h5 class="u-subtitle m-0">Pledge with no reward</h5>
+                  </label>
+                </div>
               </div>
               <p class="u-copy">
                 Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product
@@ -165,11 +171,15 @@
             <!-- ./ Selected pledge end -->
 
             <!-- Selected pledge start -->
-            <div class="modal-body-article u-wrapper">
+            <div class="modal-body-article u-wrapper" data-dialog>
               <div class="modal-body-header flex flex-ai-c">
-                <input type="radio" name="radPledge" />
+                <label for="radBamboo" class="radbutton-modal">
+                  <input type="radio" name="radModal" id="radBamboo" />
+                </label>
                 <div class="modal-body-stand">
-                  <h5 class="u-subtitle">Bamboo Stand</h5>
+                  <label for="radBamboo">
+                    <h5 class="u-subtitle">Bamboo Stand</h5>
+                  </label>
                   <h6 class="u-subtitle-sm">Pledge &dollar;25 or more</h6>
                 </div>
               </div>
@@ -191,11 +201,15 @@
             <!-- ./ Selected pledge end -->
 
             <!-- Selected pledge start -->
-            <div class="modal-body-article u-wrapper">
+            <div class="modal-body-article u-wrapper" data-dialog>
               <div class="modal-body-header flex flex-ai-c">
-                <input type="radio" name="radPledge" />
+                <label for="radBlack" class="radbutton-modal">
+                  <input type="radio" name="radModal" id="radBlack" />
+                </label>
                 <div class="modal-body-stand">
-                  <h5 class="u-subtitle">Black Edition Stand</h5>
+                  <label for="radBlack">
+                    <h5 class="u-subtitle">Black Edition Stand</h5>
+                  </label>
                   <h6 class="u-subtitle-sm">Pledge &dollar;75 or more</h6>
                 </div>
               </div>
@@ -217,11 +231,11 @@
             <!-- ./ Selected pledge end -->
 
             <!-- Selected pledge  start -->
-            <div class="modal-body-article u-wrapper">
+            <div class="modal-body-article u-wrapper stock-out">
               <div class="modal-body-header flex flex-ai-c">
-                <input type="radio" name="radPledge" />
+                <label for="radSpecial" class="radbutton-modal modal-none"> <input type="radio" id="radSpecial" /> </label>
                 <div class="modal-body-stand">
-                  <h5 class="u-subtitle">Mahogany Special Edition</h5>
+                  <h5 class="u-subtitle modal-none">Mahogany Special Edition</h5>
                   <h6 class="u-subtitle-sm">Pledge &dollar;200 or more</h6>
                 </div>
               </div>
@@ -235,8 +249,8 @@
               <div class="modal-body-transact flex flex-fd-c flex-ai-c u-wrapper">
                 <h6 class="u-subtitle">Enter your pledge</h6>
                 <div class="modal-body-transact-buttons">
-                  <button type="button" class="btn btn-modal btn-secondary"><span>&dollar;</span>200</button>
-                  <button type="button" class="btn btn-modal btn-primary">Continue</button>
+                  <button type="button" class="btn btn-modal btn-secondary stock-out-btnlight"><span>&dollar;</span>200</button>
+                  <button type="button" class="btn btn-modal btn-primary stock-out-btn">Out Of Stock</button>
                 </div>
               </div>
             </div>
@@ -249,7 +263,7 @@
 
     <!-- Modal Success -->
     <div class="modal u-wrapper" id="modalSuccess">
-      <div class="modal-content modal-success">
+      <div class="modal-content modal-success u-wrapper">
         <div class="modal-header">
           <img src="./images/icon-check.svg" alt="Success" />
           <h5 class="u-title">Thanks for your support</h5>

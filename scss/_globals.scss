@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   font-size: 100%;
 }
 
@@ -7,6 +9,8 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
 }
 
 body {
@@ -95,7 +99,7 @@ a {
 
 //Max-width of the content
 main {
-  max-width: 51.625rem;
+  max-width: 53.25rem;
   margin: 0 auto;
 }
 
@@ -137,11 +141,11 @@ main {
 }
 
 .u-subtitle {
-  font-size: 1.1em;
+  font-size: 1.05em;
   margin-bottom: 0.3em;
 
   &-sm {
-    font-size: 1.15em;
+    font-size: 1em;
     color: var(--clr-cyan);
   }
 }
@@ -179,8 +183,12 @@ main {
 
 .btn-modal {
   min-width: 7rem;
-  font-size: 1.1em;
+  font-size: 1em;
   padding: 1rem 0;
+
+  @include mq-up(small) {
+    min-width: 8rem;
+  }
 }
 
 .btn-primary {
@@ -198,5 +206,62 @@ main {
 
   &:hover {
     border: 1px solid var(--clr-cyan);
+  }
+}
+
+//Radio Button Design (Modal)
+.radbutton-modal {
+  vertical-align: middle;
+  padding: 5px;
+  border-radius: 50px;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border: 1px solid var(--clr-gray);
+
+  > input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    background: none;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 300ms ease, background-color 300ms ease, visibility 300ms ease;
+
+    &:checked {
+      background-color: var(--clr-cyan);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+//Modal None - Not point of interaction
+.modal-none {
+  pointer-events: none;
+  > input[type="radio"]:checked {
+    background-color: transparent;
+  }
+}
+
+//Fuera de Stock
+.stock-out {
+  opacity: 0.4;
+
+  &-btn {
+    background-color: var(--clr-gray);
+    pointer-events: none;
+
+    &light {
+      pointer-events: none;
+    }
   }
 }

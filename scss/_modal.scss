@@ -3,7 +3,9 @@
   &-content {
     padding-top: 2rem;
     padding-bottom: 2rem;
+    margin: 0 auto;
     @include box;
+    max-width: 47.25rem;
   }
 
   &-header {
@@ -28,8 +30,23 @@
 
     &-article {
       @include box;
+      position: relative;
+      padding: 0 1.5rem;
+
+      &.is-active {
+        border: 2px solid var(--clr-cyan);
+        box-shadow: initial;
+      }
+
       &:last-child {
         margin-bottom: 0;
+      }
+
+      @include mq-up(medium) {
+        .u-copy {
+          padding-left: 2.75rem;
+          padding-right: 0;
+        }
       }
     }
 
@@ -37,25 +54,92 @@
       padding-top: 2rem;
       padding-bottom: 2rem;
 
-      input[type="radio"] {
+      @include mq-up(medium) {
+        align-items: baseline;
+      }
+
+      .radbutton-modal {
         margin-right: 1rem;
+      }
+    }
+
+    &-stand {
+      @include mq-up(medium) {
+        display: flex;
+        align-items: center;
+      }
+
+      label h5:hover,
+      label h5:focus {
+        color: var(--clr-cyan);
+      }
+
+      h5 {
+        cursor: pointer;
+        display: inline-block;
+        transition: color 200ms ease-in;
+        margin-right: 1rem;
+        margin-bottom: 0.6rem;
+
+        @include mq-up(medium) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-footer {
+      @include mq-up(medium) {
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+        padding-top: 1.3rem;
+
+        > p {
+          padding: 0;
+          font-size: 1.4em;
+
+          span {
+            font-size: 0.7em;
+          }
+        }
       }
     }
 
     &-transact {
       border-top: 1px solid rgba(black, 0.2);
-      padding-top: 1.875rem;
-      padding-bottom: 1.375rem;
       margin: 0 -1.3125rem;
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out, padding 200ms ease-in-out;
+
+      &.is-active {
+        padding-top: 1.875rem;
+        padding-bottom: 1.375rem;
+        opacity: 1;
+        visibility: visible;
+        max-height: 100vh;
+      }
+
+      @include mq-up(small) {
+        margin: 0 -1.5rem;
+      }
 
       @include mq-up(medium) {
-        margin: 0 -1.5rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
       }
 
       h6 {
         margin-bottom: 1.5rem;
         color: var(--clr-gray);
         font-weight: normal;
+
+        @include mq-up(medium) {
+          margin: 0;
+        }
       }
 
       &-buttons {
@@ -76,4 +160,10 @@
 //Success
 .modal-success {
   text-align: center;
+  max-width: 33.75rem;
+  margin: 0 auto;
+
+  img {
+    margin-bottom: 1.1rem;
+  }
 }

@@ -11,6 +11,8 @@
 
 html {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   font-size: 100%;
 }
 
@@ -18,6 +20,8 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
 }
 
 body {
@@ -96,7 +100,7 @@ a {
 }
 
 main {
-  max-width: 51.625rem;
+  max-width: 53.25rem;
   margin: 0 auto;
 }
 
@@ -136,11 +140,11 @@ main {
 }
 
 .u-subtitle {
-  font-size: 1.1em;
+  font-size: 1.05em;
   margin-bottom: 0.3em;
 }
 .u-subtitle-sm {
-  font-size: 1.15em;
+  font-size: 1em;
   color: var(--clr-cyan);
 }
 
@@ -173,8 +177,13 @@ main {
 
 .btn-modal {
   min-width: 7rem;
-  font-size: 1.1em;
+  font-size: 1em;
   padding: 1rem 0;
+}
+@media only screen and (min-width: 40em) {
+  .btn-modal {
+    min-width: 8rem;
+  }
 }
 
 .btn-primary {
@@ -191,6 +200,55 @@ main {
 }
 .btn-secondary:hover {
   border: 1px solid var(--clr-cyan);
+}
+
+.radbutton-modal {
+  vertical-align: middle;
+  padding: 5px;
+  border-radius: 50px;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border: 1px solid var(--clr-gray);
+}
+.radbutton-modal > input[type=radio] {
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, background-color 300ms ease, visibility 300ms ease;
+}
+.radbutton-modal > input[type=radio]:checked {
+  background-color: var(--clr-cyan);
+  opacity: 1;
+  visibility: visible;
+}
+.radbutton-modal > input[type=radio]:focus {
+  outline: none;
+}
+
+.modal-none {
+  pointer-events: none;
+}
+.modal-none > input[type=radio]:checked {
+  background-color: transparent;
+}
+
+.stock-out {
+  opacity: 0.4;
+}
+.stock-out-btn {
+  background-color: var(--clr-gray);
+  pointer-events: none;
+}
+.stock-out-btnlight {
+  pointer-events: none;
 }
 
 .main-header {
@@ -574,18 +632,16 @@ main {
   margin-bottom: 0;
   opacity: 0.4;
 }
-.about-content-especial .btn {
-  background-color: var(--clr-gray);
-  cursor: initial;
-}
 
 .modal-content {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin: 0 auto;
   background-color: var(--clr-white);
   border-radius: 8px;
   box-shadow: 0 -1px 8px -6px black;
   margin-bottom: 1.5rem;
+  max-width: 47.25rem;
 }
 .modal-header {
   margin-bottom: 1.5rem;
@@ -607,32 +663,108 @@ main {
   border-radius: 8px;
   box-shadow: 0 -1px 8px -6px black;
   margin-bottom: 1.5rem;
+  position: relative;
+  padding: 0 1.5rem;
+}
+.modal-body-article.is-active {
+  border: 2px solid var(--clr-cyan);
+  box-shadow: initial;
 }
 .modal-body-article:last-child {
   margin-bottom: 0;
+}
+@media only screen and (min-width: 64em) {
+  .modal-body-article .u-copy {
+    padding-left: 2.75rem;
+    padding-right: 0;
+  }
 }
 .modal-body-header {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.modal-body-header input[type=radio] {
+@media only screen and (min-width: 64em) {
+  .modal-body-header {
+    align-items: baseline;
+  }
+}
+.modal-body-header .radbutton-modal {
   margin-right: 1rem;
+}
+@media only screen and (min-width: 64em) {
+  .modal-body-stand {
+    display: flex;
+    align-items: center;
+  }
+}
+.modal-body-stand label h5:hover,
+.modal-body-stand label h5:focus {
+  color: var(--clr-cyan);
+}
+.modal-body-stand h5 {
+  cursor: pointer;
+  display: inline-block;
+  transition: color 200ms ease-in;
+  margin-right: 1rem;
+  margin-bottom: 0.6rem;
+}
+@media only screen and (min-width: 64em) {
+  .modal-body-stand h5 {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .modal-body-footer {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    padding-top: 1.3rem;
+  }
+  .modal-body-footer > p {
+    padding: 0;
+    font-size: 1.4em;
+  }
+  .modal-body-footer > p span {
+    font-size: 0.7em;
+  }
 }
 .modal-body-transact {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 -1.3125rem;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out, padding 200ms ease-in-out;
+}
+.modal-body-transact.is-active {
   padding-top: 1.875rem;
   padding-bottom: 1.375rem;
-  margin: 0 -1.3125rem;
+  opacity: 1;
+  visibility: visible;
+  max-height: 100vh;
+}
+@media only screen and (min-width: 40em) {
+  .modal-body-transact {
+    margin: 0 -1.5rem;
+  }
 }
 @media only screen and (min-width: 64em) {
   .modal-body-transact {
-    margin: 0 -1.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 .modal-body-transact h6 {
   margin-bottom: 1.5rem;
   color: var(--clr-gray);
   font-weight: normal;
+}
+@media only screen and (min-width: 64em) {
+  .modal-body-transact h6 {
+    margin: 0;
+  }
 }
 .modal-body-transact-buttons .btn-secondary {
   margin-right: 0.7rem;
@@ -645,6 +777,11 @@ main {
 
 .modal-success {
   text-align: center;
+  max-width: 33.75rem;
+  margin: 0 auto;
+}
+.modal-success img {
+  margin-bottom: 1.1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -34,9 +34,13 @@ export default function modalActive() {
     modal.addEventListener("click", function () {
       //Clear all the modals
       const $activeModal = d.querySelectorAll(".modal.is-visible");
-      if ($activeModal.length > 0) {
-        $activeModal[0].classList.remove("is-visible");
-      }
+      $activeModal.forEach((mod) => {
+        $modalTransact.forEach((transact) => {
+          transact.classList.remove("is-active");
+        });
+        mod.classList.remove("is-visible");
+      });
+
       //Open modal selected
       const $modalId = this.dataset.open;
       d.getElementById($modalId).classList.add("is-visible");
@@ -64,4 +68,4 @@ export default function modalActive() {
   });
 }
 
-//SOLO FALTA CERRAR EL DEL FONDO CUANDO SE ACTIVE EL DEL CHECK
+//ARREGLAR LA INTERACCION DEL VISIBILITY , PORQUE ESTA HAVBIENDO PROBLEMAS CON ELLO (CUANDOP SE ABRE EL MODASL, COURRE PROBLEMAS CON EL RADIO BUTTON)

@@ -643,14 +643,16 @@ main {
   display: grid;
   place-items: center;
   background: rgba(0, 0, 0, 0.6);
-  visibility: hidden;
   opacity: 0;
-  z-index: 1;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: initial;
   transition: all 250ms ease-in;
 }
 .modal.is-visible {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
 .modal-content {
   padding-top: 2rem;

@@ -32,7 +32,7 @@ export default function modalActive() {
   //Open Modal
   for (const modal of $openModals) {
     modal.addEventListener("click", function () {
-      //Clear all the modals
+      //Clear all the modals and Radbuttons
       const $activeModal = d.querySelectorAll(".modal.is-visible");
       $activeModal.forEach((mod) => {
         $modalTransact.forEach((transact) => {
@@ -67,5 +67,3 @@ export default function modalActive() {
     }
   });
 }
-
-//ARREGLAR LA INTERACCION DEL VISIBILITY , PORQUE ESTA HAVBIENDO PROBLEMAS CON ELLO (CUANDOP SE ABRE EL MODASL, COURRE PROBLEMAS CON EL RADIO BUTTON)
